@@ -15,18 +15,19 @@
         </div>
         <div id="game">
             <div id="scoreBoard">
-                <span class="score">{{ score }}</span>
+                <span class="score" @click="addRandomTile">{{ score }}</span>
                 <span class="restart" @click="restartGame"><i class="fas fa-sync"></i></span>
             </div>
-            <div id="gameBoard">
-
+            <div id="boardContainer">
+                <div id="gameBoard">
+                    <div class="tiles" v-for="tile in tiles">{{ tile.value }}</div>
+                </div>
             </div>
         </div>
         <div id="socialMedia">
             <div>Find me</div>
             <div class="icons">
                 <a href="https://github.com/piotrrussw" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/piotr-wadycki-389485165/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
