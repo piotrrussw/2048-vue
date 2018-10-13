@@ -1,0 +1,83 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #faf8ef;
+    font-family: 'Raleway', sans-serif, Arial;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+#usersResults {
+    width: 25%;
+    margin: 25px 0;
+    height: 100%;
+}
+
+#socialMedia {
+    width: 25%;
+    margin: 25px 0;
+    height: 100%;
+}
+
+#socialMedia div{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+#socialMedia a {
+    font-size: 80px;
+    text-decoration: none;
+    width: 100%;
+}
+
+#socialMedia i {
+    margin: 60px auto;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+
+.fa-github {
+    color: #000;
+}
+
+.fa-linkedin-in {
+    color: #9D61CB;
+}
+
+#usersResults div{
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+}
+
+#game {
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+}
+
+#scoreBoard {
+    position: relative;
+}
+
+.restart{
+    position: absolute;
+    font-size: 25px;
+    color: #707070;
+    cursor: pointer;
+    right: 0;
+    margin: 5px 0;
+}
+
+.score {
+    font-size: 30px;
+    text-align: center;
+}

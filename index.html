@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern 2048 Game</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="usersResults">
+            <div>Leaderboard</div>
+        </div>
+        <div id="game">
+            <div id="scoreBoard">
+                <span class="score">{{ score }}</span>
+                <span class="restart" @click="restartGame"><i class="fas fa-sync"></i></span>
+            </div>
+            <div id="gameBoard"></div>
+        </div>
+        <div id="socialMedia">
+            <div>Find me</div>
+            <div class="icons">
+                <a href="https://github.com/piotrrussw" target="_blank" rel="noopener noreferrer"> <i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/piotr-wadycki-389485165/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+<script src="js/lib/vue.js"></script>
+<script src="js/keyConfig.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
