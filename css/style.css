@@ -66,15 +66,15 @@ html, body {
 
 #scoreBoard {
     position: relative;
-    width: 80vh;
+    width: 70vh;
     display: inline-block;
 }
 
 #boardContainer {
     margin: 20px 0;
-    height: 80vh;
+    height: 70vh;
     display: inline-block;
-    width: 80vh;
+    width: 70vh;
 }
 
 #gameBoard {
@@ -82,17 +82,18 @@ html, body {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    grid-gap: 20px;
+    grid-gap: 30px;
 }
 
 .tiles {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 40px;
     padding: 20px;
     border-radius: 50% 50%;
     background: #ccc;
+    border: none;
 }
 
 .restart{

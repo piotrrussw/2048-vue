@@ -1,0 +1,69 @@
+.default {
+    color: #faf8ef;
+    background: #faf8ef;
+}
+
+.tile-2 {
+    background: #91ADFC;
+    color: #fff;
+}
+
+.tile-4 {
+    background: #00DE7E;
+    color: #fff;
+}
+
+.tile-8 {
+    background: #C44467;
+    color: #fff;
+}
+
+.tile-16 {
+    background: #A2AE32;
+    color: #fff;
+}
+
+.tile-32 {
+    background: #FFEC44;
+    color: #fff;
+}
+
+.tile-64 {
+    background: #D26262;
+    color: #fff;
+}
+
+.tile-128 {
+    background: #B40006;
+    color: #fff;
+}
+
+.tile-256 {
+    background: #FF4E00;
+    color: #fff;
+}
+
+.tile-512 {
+    background: #ACA2B9;
+    color: #fff;
+}
+
+.tile-1024 {
+    background: #9D61CB;
+    color: #fff;
+}
+
+.tile-2048 {
+    background: #206374;
+    color: #fff;
+}
+
+.tile-4096 {
+    background: #881684;
+    color: #fff;
+}
+
+.tile-8192 {
+    background: #140803;
+    color: #fff;
+}

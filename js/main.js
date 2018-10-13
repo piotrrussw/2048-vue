@@ -23,6 +23,7 @@ new Vue({
                         x: i,
                         y: j,
                         value: 0,
+                        class: 'default'
                     });
                 }
             }
@@ -43,7 +44,8 @@ new Vue({
             this.addTile({
                 x: position.x,
                 y: position.y,
-                value
+                value,
+                class: `tile-${value}`
             });
         },
 

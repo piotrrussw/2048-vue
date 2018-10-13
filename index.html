@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/tiles.css">
 </head>
 <body>
     <div class="container">
@@ -20,7 +21,7 @@
             </div>
             <div id="boardContainer">
                 <div id="gameBoard">
-                    <div class="tiles" v-for="tile in tiles">{{ tile.value }}</div>
+                    <div class="tiles" v-for="tile in tiles" :class="tile.class">{{ tile.value }}</div>
                 </div>
             </div>
         </div>
