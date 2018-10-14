@@ -14,10 +14,11 @@
         <div id="usersResults">
             <div>Leaderboard</div>
         </div>
-        <div id="game">
+        <div id="game" v-cloak>
             <div id="scoreBoard">
                 <span class="score" @click="addRandomTile">{{ score }}</span>
-                <button>Left</button>
+                <button @click="moveLeft">Left</button>
+                <button @click="moveRight">Right</button>
                 <span class="restart" @click="restartGame"><i class="fas fa-sync"></i></span>
             </div>
             <div id="boardContainer">

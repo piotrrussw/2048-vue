@@ -70,8 +70,71 @@ new Vue({
 
         },
 
-        moveTile() {
+        moveTile(direction) {
+            switch(direction) {
+                case 'left':
+                    this.moveLeft();
+                    break;
+                case 'right':
+                    this.moveRight();
+                    break;
+                case 'up':
+                    this.moveUp();
+                    break;
+                case 'down':
+                    this.moveDown();
+                    break;
+                default:
+                    break;
+            }
+        },
 
+        moveLeft() {
+            this.tiles.forEach(row => {
+                const valueArr = row.map(item => item.value);
+                const mergedArr = this.valueMerge(valueArr);
+                mergedArr.forEach((item, i) => {
+                    row[i].value = item;
+                    item ? row[i].class = `tile-${item}` : row[i].class = 'default';
+                });
+            });
+        },
+
+        moveRight() {
+            this.tiles.forEach(row => {
+                const valueArr = row.map(item => item.value).reverse();
+                const mergedArr = this.valueMerge(valueArr).reverse();
+                mergedArr.forEach((item, i) => {
+                    row[i].value = item;
+                    item ? row[i].class = `tile-${item}` : row[i].class = 'default';
+                });
+            });
+        },
+
+        moveUp() {
+
+        },
+
+        moveDown() {
+
+        },
+
+        valueMerge(arr) {
+            let ret = [];
+            let cleanArr = [];
+            arr.forEach(item => item ? cleanArr.push(item) : null);
+            for(let i = 0; i < cleanArr.length; i++) {
+                if(cleanArr[i + 1] && cleanArr[i] === cleanArr[i + 1]) {
+                    ret.push(cleanArr[i] + cleanArr[i + 1]);
+                    i++;
+                } else {
+                    ret.push(cleanArr[i]);
+                }
+            }
+            for(let i = 0; i < 4; i++) {
+                i >= ret.length ? ret.push(0) : null;
+            }
+            return ret;
         },
 
         updateScore(score) {
