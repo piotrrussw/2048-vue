@@ -1,61 +1,83 @@
+.tiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 50% 50%;
+    background: #ccc;
+    border: none;
+}
+
 .default {
     color: #faf8ef;
     background: #faf8ef;
+    font-size: 20px;
 }
 
 .tile-2 {
     background: #91ADFC;
     color: #fff;
+    font-size: 40px;
 }
 
 .tile-4 {
     background: #00DE7E;
     color: #fff;
+    font-size: 40px;
 }
 
 .tile-8 {
     background: #C44467;
     color: #fff;
+    font-size: 40px;
 }
 
 .tile-16 {
     background: #A2AE32;
     color: #fff;
+    font-size: 35px;
 }
 
 .tile-32 {
     background: #FFEC44;
     color: #fff;
+    font-size: 35px;
 }
 
 .tile-64 {
     background: #D26262;
     color: #fff;
+    font-size: 35px;
 }
 
 .tile-128 {
     background: #B40006;
     color: #fff;
+    font-size: 30px;
 }
 
 .tile-256 {
     background: #FF4E00;
     color: #fff;
+    font-size: 30px;
 }
 
 .tile-512 {
     background: #ACA2B9;
     color: #fff;
+    font-size: 30px;
 }
 
 .tile-1024 {
     background: #9D61CB;
     color: #fff;
+    font-size: 25px;
 }
 
 .tile-2048 {
     background: #206374;
     color: #fff;
+    font-size: 25px;
 }
 
 .tile-4096 {

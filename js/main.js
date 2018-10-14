@@ -13,28 +13,32 @@ new Vue({
         },
 
         gameInit() {
-            const startTiles = this.startTiles;
-            const tilesLength = this.boardSize;
-            this.tiles = [];
             this.updateScore(0);
-            for(let i = 0; i < tilesLength; i++) {
-                for(let j = 0; j < tilesLength; j++) {
-                    this.tiles.push({
-                        x: i,
-                        y: j,
-                        value: 0,
-                        class: 'default'
-                    });
-                }
-            }
-            for(let i = 0; i < startTiles; i++) {
+            this.createEmptyTiles();
+            for(let i = 0; i < this.startTiles; i++) {
                 this.addRandomTile();
             }
         },
 
+        createEmptyTiles() {
+            this.tiles = [];
+            const tilesLength = this.boardSize;
+            for(let i = 0; i < tilesLength; i++) {
+                let tileRow = [];
+                for(let j = 0; j < tilesLength; j++) {
+                    tileRow.push({
+                        x: j,
+                        y: i,
+                        value: 0,
+                        class: 'default'
+                    });
+                }
+                this.tiles.push(tileRow);
+            }
+        },
+
         addTile(tile) {
-            const tileIndex = this.tiles.findIndex(item => item.x === tile.x && item.y === tile.y);
-            return this.tiles.splice(tileIndex, 1, tile);
+            return this.tiles[tile.y] ? this.tiles[tile.y].splice(tile.x, 1, tile) : null;
         },
 
         addRandomTile() {
@@ -49,16 +53,25 @@ new Vue({
         },
 
         randomCell() {
-            const filteredTiles = this.tiles.filter(item => item.value === 0) || [];
+            const flattedTiles = this.tiles.flat();
+            const filteredTiles = flattedTiles.filter(item => item.value === 0) || [];
             const availablePos = filteredTiles.length ? filteredTiles[Math.floor(Math.random()*filteredTiles.length)] : -1;
 
             const x = availablePos.x;
             const y = availablePos.y;
-            console.log(x, y);
+
             return availablePos !== -1 ? {
                 x,
                 y
             } : this.gameOver();
+        },
+
+        mergeTiles() {
+
+        },
+
+        moveTile() {
+
         },
 
         updateScore(score) {
