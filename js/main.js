@@ -33,7 +33,7 @@ new Vue({
         },
 
         addTile(tile) {
-            const tileIndex = this.tiles.findIndex(item => item.x === tile.x && item.y === tile.y) || -1;
+            const tileIndex = this.tiles.findIndex(item => item.x === tile.x && item.y === tile.y);
             return this.tiles.splice(tileIndex, 1, tile);
         },
 
