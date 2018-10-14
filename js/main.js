@@ -112,11 +112,31 @@ new Vue({
         },
 
         moveUp() {
-
+            for(let i = 0; i < 4; i++) {
+                let valueArr = [];
+                for(let j = 0; j < 4; j++) {
+                    valueArr.push(this.tiles[j][i].value);
+                }
+                const mergedArr = this.valueMerge(valueArr);
+                mergedArr.forEach((item,index) => {
+                    this.tiles[index][i].value = item;
+                    item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
+                });
+            }
         },
 
         moveDown() {
-
+            for(let i = 0; i < 4; i++) {
+                let valueArr = [];
+                for(let j = 0; j < 4; j++) {
+                    valueArr.push(this.tiles[j][i].value);
+                }
+                const mergedArr = this.valueMerge(valueArr.reverse());
+                mergedArr.reverse().forEach((item,index) => {
+                    this.tiles[index][i].value = item;
+                    item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
+                });
+            }
         },
 
         valueMerge(arr) {
