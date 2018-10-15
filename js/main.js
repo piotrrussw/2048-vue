@@ -1,4 +1,4 @@
-new Vue({
+const game = new Vue({
     el: '#game',
     data: {
         score: 0,
@@ -6,6 +6,13 @@ new Vue({
         startTiles: 2,
         tiles: [],
     },
+
+    events: {
+        moveDown(){
+            console.log('moveDown');
+        }
+    },
+
     methods: {
         restartGame(){
             console.log('game restarted');
@@ -66,77 +73,74 @@ new Vue({
             } : this.gameOver();
         },
 
-        mergeTiles() {
-
-        },
-
-        moveTile(direction) {
-            switch(direction) {
-                case 'left':
-                    this.moveLeft();
-                    break;
-                case 'right':
-                    this.moveRight();
-                    break;
-                case 'up':
-                    this.moveUp();
-                    break;
-                case 'down':
-                    this.moveDown();
-                    break;
-                default:
-                    break;
-            }
-        },
-
         moveLeft() {
+            let moved = 0;
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value);
                 const mergedArr = this.valueMerge(valueArr);
+                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
+                    moved = 1;
+                }
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
+            return moved;
         },
 
         moveRight() {
+            let moved = 0;
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value).reverse();
                 const mergedArr = this.valueMerge(valueArr).reverse();
+                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
+                    moved = 1;
+                }
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
+            return moved;
         },
 
         moveUp() {
+            let moved = 0;
             for(let i = 0; i < 4; i++) {
                 let valueArr = [];
                 for(let j = 0; j < 4; j++) {
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr);
+                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
+                    moved = 1;
+                }
                 mergedArr.forEach((item,index) => {
                     this.tiles[index][i].value = item;
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
+            return moved;
         },
 
         moveDown() {
+            let moved = 0;
             for(let i = 0; i < 4; i++) {
                 let valueArr = [];
                 for(let j = 0; j < 4; j++) {
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr.reverse());
+                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
+                    moved = 1;
+                }
                 mergedArr.reverse().forEach((item,index) => {
                     this.tiles[index][i].value = item;
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
+            return moved;
         },
 
         valueMerge(arr) {
@@ -163,6 +167,30 @@ new Vue({
 
         gameOver() {
             alert('You lose');
+        },
+
+        detectKey(e) {
+            switch(e.key) {
+                case 'ArrowLeft':
+                    console.log(this.moveLeft());
+                    this.moveLeft() ? this.addRandomTile() : null;
+                    break;
+                case 'ArrowUp':
+                    this.moveUp() ? this.addRandomTile() : null;
+                    break;
+                case 'ArrowRight':
+                    this.moveRight() ? this.addRandomTile() : null;
+                    break;
+                case 'ArrowDown':
+                    this.moveDown() ? this.addRandomTile() : null;
+                    break;
+                default:
+                    break;
+            }
         }
     }
+});
+
+window.addEventListener('keydown', function(e) {
+    game.detectKey(e);
 });

@@ -17,10 +17,6 @@
         <div id="game" v-cloak>
             <div id="scoreBoard">
                 <span class="score" @click="addRandomTile">{{ score }}</span>
-                <button @click="moveLeft">Left</button>
-                <button @click="moveRight">Right</button>
-                <button @click="moveUp">Up</button>
-                <button @click="moveDown">Down</button>
                 <span class="restart" @click="restartGame"><i class="fas fa-sync"></i></span>
             </div>
             <div id="boardContainer">
