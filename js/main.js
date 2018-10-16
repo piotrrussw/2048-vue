@@ -20,7 +20,7 @@ const game = new Vue({
         },
 
         gameInit() {
-            this.updateScore(0);
+            this.updateScore();
             this.createEmptyTiles();
             for(let i = 0; i < this.startTiles; i++) {
                 this.addRandomTile();
@@ -161,7 +161,9 @@ const game = new Vue({
             return ret;
         },
 
-        updateScore(score) {
+        updateScore() {
+            const flattedArr = this.tiles.flat();
+            const score = flattedArr.length ? flattedArr.map(item => item.value).reduce((previousValue, currentValue) => previousValue + currentValue) : 0;
             this.score = score;
         },
 
@@ -172,16 +174,28 @@ const game = new Vue({
         detectKey(e) {
             switch(e.key) {
                 case 'ArrowLeft':
-                    this.moveLeft() ? this.addRandomTile() : null;
+                    if(this.moveLeft()) {
+                        this.addRandomTile();
+                        this.updateScore();
+                    }
                     break;
                 case 'ArrowUp':
-                    this.moveUp() ? this.addRandomTile() : null;
+                    if(this.moveUp()) {
+                        this.addRandomTile();
+                        this.updateScore();
+                    }
                     break;
                 case 'ArrowRight':
-                    this.moveRight() ? this.addRandomTile() : null;
+                    if(this.moveRight()) {
+                        this.addRandomTile();
+                        this.updateScore();
+                    }
                     break;
                 case 'ArrowDown':
-                    this.moveDown() ? this.addRandomTile() : null;
+                    if(this.moveDown()) {
+                        this.addRandomTile();
+                        this.updateScore();
+                    }
                     break;
                 default:
                     break;
