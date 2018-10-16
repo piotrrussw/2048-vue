@@ -7,21 +7,14 @@ const game = new Vue({
         tiles: [],
     },
 
-    events: {
-        moveDown(){
-            console.log('moveDown');
-        }
+    created() {
+        this.gameInit();
     },
 
     methods: {
-        restartGame(){
-            console.log('game restarted');
-            this.gameInit();
-        },
-
         gameInit() {
-            this.updateScore();
             this.createEmptyTiles();
+            this.updateScore();
             for(let i = 0; i < this.startTiles; i++) {
                 this.addRandomTile();
             }
