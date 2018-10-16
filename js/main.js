@@ -74,12 +74,12 @@ const game = new Vue({
         },
 
         moveLeft() {
-            let moved = 0;
+            let moved = false;
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value);
                 const mergedArr = this.valueMerge(valueArr);
-                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
-                    moved = 1;
+                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
+                    moved = true;
                 }
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
@@ -90,12 +90,12 @@ const game = new Vue({
         },
 
         moveRight() {
-            let moved = 0;
+            let moved = false;
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value).reverse();
                 const mergedArr = this.valueMerge(valueArr).reverse();
-                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
-                    moved = 1;
+                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
+                    moved = true;
                 }
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
@@ -106,15 +106,15 @@ const game = new Vue({
         },
 
         moveUp() {
-            let moved = 0;
+            let moved = false;
             for(let i = 0; i < 4; i++) {
                 let valueArr = [];
                 for(let j = 0; j < 4; j++) {
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr);
-                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
-                    moved = 1;
+                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
+                    moved = true;
                 }
                 mergedArr.forEach((item,index) => {
                     this.tiles[index][i].value = item;
@@ -125,15 +125,15 @@ const game = new Vue({
         },
 
         moveDown() {
-            let moved = 0;
+            let moved = false;
             for(let i = 0; i < 4; i++) {
                 let valueArr = [];
                 for(let j = 0; j < 4; j++) {
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr.reverse());
-                if(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index])) {
-                    moved = 1;
+                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
+                    moved = true;
                 }
                 mergedArr.reverse().forEach((item,index) => {
                     this.tiles[index][i].value = item;
@@ -172,7 +172,6 @@ const game = new Vue({
         detectKey(e) {
             switch(e.key) {
                 case 'ArrowLeft':
-                    console.log(this.moveLeft());
                     this.moveLeft() ? this.addRandomTile() : null;
                     break;
                 case 'ArrowUp':
