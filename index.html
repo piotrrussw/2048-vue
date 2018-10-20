@@ -6,6 +6,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/tiles.css">
 </head>
@@ -16,7 +17,10 @@
         </div>
         <div id="game" v-cloak>
             <div id="scoreBoard">
-                <span class="score" @click="addRandomTile">{{ score }}</span>
+                <transition
+                        enter-active-class="animated flash faster">
+                    <span class="score" :key="score">{{ score }}</span>
+                </transition>
                 <span class="restart" @click="gameInit"><i class="fas fa-sync"></i></span>
             </div>
             <div id="boardContainer">

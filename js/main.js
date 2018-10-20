@@ -87,9 +87,11 @@ const game = new Vue({
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value).reverse();
                 const mergedArr = this.valueMerge(valueArr).reverse();
-                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
+                console.log(valueArr, mergedArr);
+                if(!(valueArr.length === mergedArr.length && valueArr.reverse().every((value, index) => value === mergedArr[index]))) {
                     moved = true;
                 }
+                console.log(moved);
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
