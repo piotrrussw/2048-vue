@@ -6,6 +6,8 @@
     border-radius: 50% 50%;
     background: #ccc;
     border: none;
+    width: 50%;
+    height: 50%;
 }
 
 .default {

@@ -72,9 +72,9 @@ html, body {
 
 #boardContainer {
     margin: 20px 0;
-    height: 70vh;
+    height: 80%;
     display: inline-block;
-    width: 70vh;
+    width: 80%;
 }
 
 #gameBoard {
@@ -83,6 +83,8 @@ html, body {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 30px;
+    grid-auto-rows: 25%;
+    grid-auto-columns: 25%;
 }
 
 .restart{

@@ -67,19 +67,22 @@ const game = new Vue({
         },
 
         moveLeft() {
-            let moved = false;
+            let  moved = false;
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value);
                 const mergedArr = this.valueMerge(valueArr);
-                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
-                    moved = true;
+
+                for(let i = 0; i < valueArr.length; i++) {
+                    if(valueArr[i] !== mergedArr[i]) moved = true;
                 }
+
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
-            return moved;
+            console.log(moved);
+            return moved; //if none was shifted return true
         },
 
         moveRight() {
@@ -87,16 +90,17 @@ const game = new Vue({
             this.tiles.forEach(row => {
                 const valueArr = row.map(item => item.value).reverse();
                 const mergedArr = this.valueMerge(valueArr).reverse();
-                console.log(valueArr, mergedArr);
-                if(!(valueArr.length === mergedArr.length && valueArr.reverse().every((value, index) => value === mergedArr[index]))) {
-                    moved = true;
+
+                for(let i = 0, j = mergedArr.length - 1; i < valueArr.length; i++, j--) {
+                    if(valueArr[j] !== mergedArr[i]) moved = true;
                 }
-                console.log(moved);
+
                 mergedArr.forEach((item, i) => {
                     row[i].value = item;
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
+            console.log(moved);
             return moved;
         },
 
@@ -108,14 +112,17 @@ const game = new Vue({
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr);
-                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
-                    moved = true;
+
+                for(let i = 0; i < valueArr.length; i++) {
+                    if(valueArr[i] !== mergedArr[i]) moved = true;
                 }
+
                 mergedArr.forEach((item,index) => {
                     this.tiles[index][i].value = item;
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
+            console.log(moved);
             return moved;
         },
 
@@ -127,14 +134,17 @@ const game = new Vue({
                     valueArr.push(this.tiles[j][i].value);
                 }
                 const mergedArr = this.valueMerge(valueArr.reverse());
-                if(!(valueArr.length === mergedArr.length && valueArr.every((value, index) => value === mergedArr[index]))) {
-                    moved = true;
+
+                for(let i = 0; i < valueArr.length; i++) {
+                    if(valueArr[i] !== mergedArr[i]) moved = true;
                 }
+
                 mergedArr.reverse().forEach((item,index) => {
                     this.tiles[index][i].value = item;
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
+            console.log(moved);
             return moved;
         },
 
