@@ -20,48 +20,56 @@
     background: #91ADFC;
     color: #fff;
     font-size: 40px;
+    transition: .5s;
 }
 
 .tile-4 {
     background: #00DE7E;
     color: #fff;
     font-size: 40px;
+    transition: .5s;
 }
 
 .tile-8 {
     background: #C44467;
     color: #fff;
     font-size: 40px;
+    transition: .5s;
 }
 
 .tile-16 {
     background: #A2AE32;
     color: #fff;
     font-size: 35px;
+    transition: .5s;
 }
 
 .tile-32 {
     background: #FFEC44;
     color: #fff;
     font-size: 35px;
+    transition: .5s;
 }
 
 .tile-64 {
     background: #D26262;
     color: #fff;
     font-size: 35px;
+    transition: .5s;
 }
 
 .tile-128 {
     background: #B40006;
     color: #fff;
     font-size: 30px;
+    transition: .5s;
 }
 
 .tile-256 {
     background: #FF4E00;
     color: #fff;
     font-size: 30px;
+    transition: .5s;
 }
 
 .tile-512 {

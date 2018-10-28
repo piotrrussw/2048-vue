@@ -5,6 +5,7 @@ const game = new Vue({
         boardSize: 4,
         startTiles: 2,
         tiles: [],
+        gameRunning: true,
     },
 
     created() {
@@ -13,6 +14,7 @@ const game = new Vue({
 
     methods: {
         gameInit() {
+            this.gameRunning = true;
             this.createEmptyTiles();
             this.updateScore();
             for(let i = 0; i < this.startTiles; i++) {
@@ -213,7 +215,7 @@ const game = new Vue({
         },
 
         gameOver() {
-
+            this.gameRunning = false;
         },
 
         detectKey(e) {

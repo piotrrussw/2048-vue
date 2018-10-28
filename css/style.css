@@ -100,3 +100,37 @@ html, body {
     font-size: 30px;
     text-align: center;
 }
+
+.game-over {
+    width: 50%;
+    height: 80%;
+    position: absolute;
+    background: rgba(1,1,1,0.5);
+    left: 26%;
+    border-radius: 10px;
+    transition: 3s;
+}
+
+.game-over .lost {
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 12vh;
+    color: #ccc;
+}
+
+.game-over .score {
+    width: 100%;
+    margin-top: 12vh;
+    text-align: center;
+    font-size: 50px;
+    color: #ccc;
+}
+
+.game-over .try-again {
+    margin-top: 12vh;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
