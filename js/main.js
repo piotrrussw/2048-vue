@@ -81,7 +81,6 @@ const game = new Vue({
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
-            console.log(moved);
             return moved; //if none was shifted return true
         },
 
@@ -100,7 +99,6 @@ const game = new Vue({
                     item ? row[i].class = `tile-${item}` : row[i].class = 'default';
                 });
             });
-            console.log(moved);
             return moved;
         },
 
@@ -122,7 +120,6 @@ const game = new Vue({
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
-            console.log(moved);
             return moved;
         },
 
@@ -144,7 +141,6 @@ const game = new Vue({
                     item ? this.tiles[index][i].class = `tile-${item}` : this.tiles[index][i].class = 'default';
                 });
             }
-            console.log(moved);
             return moved;
         },
 
@@ -166,14 +162,58 @@ const game = new Vue({
             return ret;
         },
 
+        canContinue: function (arr) {
+            console.log(arr);
+            let movableRows = 0;
+            let movableColumns = 0;
+            //function which returns column of array.
+            const getColumns = (board, n) => board.map(x => x[n].value);
+            const rows = arr.map(rowArr => rowArr.map(item => item.value));
+            let columns = [];
+            for (let i = 0; i < arr.length; i++) {
+                columns.push(getColumns(arr, i));
+            }
+
+            rows.forEach(item => { //checking if any row can be merged
+                const mergedArr = this.valueMerge(item);
+                let equal = true;
+                for (let i = 0; i < item.length; i++) {
+                    item[i] !== mergedArr[i] || item[i] === 0 ? equal = false : null;
+                }
+                !equal ? movableRows++ : null;
+            });
+
+            columns.forEach(item => {
+                const mergedArr = this.valueMerge(item);
+                let equal = true;
+                for (let i = 0; i < item.length; i++) {
+                    item[i] !== mergedArr[i] || item[i] === 0 ? equal = false : null;
+                }
+                !equal ? movableColumns++ : null;
+            });
+
+            return movableColumns > 0 || movableRows > 0; //if both are 0, the game is over
+        },
+
         updateScore() {
-            const flattedArr = this.tiles.flat();
+            const tilesArr = this.tiles;
+            const flattedArr = tilesArr.flat();
             const score = flattedArr.length ? flattedArr.map(item => item.value).reduce((previousValue, currentValue) => previousValue + currentValue) : 0;
+            let lose = true;
+
+
+            flattedArr.forEach((item, i, arr) => {
+                if(item.value === 0 || (i < arr.length - 1 && item.value === arr[i + 1].value)) {
+                    lose = false;
+                }
+            });
+
             this.score = score;
+            !this.canContinue(tilesArr) ? this.gameOver() : null;
         },
 
         gameOver() {
-            alert('You lose');
+
         },
 
         detectKey(e) {
