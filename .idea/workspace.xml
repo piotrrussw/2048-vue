@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6826b771-dbdd-4e0c-8e9b-95d7c01a3829" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/css/tiles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/tiles.css" afterDir="false" />
-    </list>
+    <list default="true" id="6826b771-dbdd-4e0c-8e9b-95d7c01a3829" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -38,6 +36,7 @@
           <entry key="css" value="5" />
           <entry key="html" value="4" />
           <entry key="js" value="7" />
+          <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -45,6 +44,7 @@
           <entry key="CSS" value="5" />
           <entry key="HTML" value="4" />
           <entry key="JavaScript" value="7" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -52,6 +52,7 @@
           <entry key="css" value="2049" />
           <entry key="html" value="1740" />
           <entry key="js" value="12376" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -59,6 +60,7 @@
           <entry key="CSS" value="2049" />
           <entry key="HTML" value="1740" />
           <entry key="JavaScript" value="12376" />
+          <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -69,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -92,11 +94,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+              <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/test.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -137,6 +148,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/css/tiles.css" />
+        <option value="$PROJECT_DIR$/docs/test.txt" />
       </list>
     </option>
   </component>
@@ -172,21 +184,6 @@
             <path>
               <item name="modern-2048-vue" type="b2602c69:ProjectViewProjectNode" />
               <item name="modern-2048-vue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="modern-2048-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="modern-2048-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="modern-2048-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="modern-2048-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="modern-2048-vue" type="b2602c69:ProjectViewProjectNode" />
-              <item name="modern-2048-vue" type="462c0819:PsiDirectoryNode" />
-              <item name="project-mock-up" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,13 +242,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60999000" />
+    <option name="totallyTimeSpent" value="61271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -263,7 +260,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3295082" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -315,7 +312,7 @@
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -336,7 +333,14 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
