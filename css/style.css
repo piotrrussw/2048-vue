@@ -11,10 +11,13 @@ html, body {
     margin: 20px;
 }
 
-#usersResults {
+#gameInfo {
     width: 25%;
-    margin: 25px 0;
+    margin-top: 50vh;
     height: 100%;
+    line-height: 1.5;
+    font-size: 20px;
+    margin-bottom: 0;
 }
 
 #socialMedia {
